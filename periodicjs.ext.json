@@ -1,0 +1,24 @@
+{
+    "periodicCompatibility": "8.0.0",
+    "periodicDependencies": [{
+        "extname": "periodicjs.ext.asyncadmin",
+        "version": "8.0.0"
+    }],
+    "periodicjs.ext.asyncadmin": {
+        "menu": {
+            "Extensions": {
+                "dblogs": {
+                    "tree-item": "file",
+                    "tree-item-label": "Error Log",
+                    "tree-item-link": "/%locals.adminPath%/content/dbloggers",
+                    "tree-item-id": "periodicjs.ext.dbloggers",
+                    "tree-item-attributes": {
+                        "class": "async-admin-ajax-link",
+                        "title": "Database Error Logs",
+                        "style": "background-image: url(/images/adminui/svg/exclamation29.svg);"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "test": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h"
+        }
+    },
+    "sample_external_mongo": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h",
+            "mongourl": "mongodb://s45vtsrt:s45yhdyg564@iad1-c12-1.objectrocket.com:50071,iad1-c12-0.objectrocket.com:50071/pf_app1_dev_errorlog",
+            "mongooptions": {
+                "replset": {
+                    "rs_name": "38c7f330bb2b46999f821bccd9ab53d2"
+                }
+            }
+        }
+    },
+    "dev_remote": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h"
+        }
+    },
+    "development": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h"
+        }
+    },
+    "qa": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h"
+        }
+    },
+    "staging": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h"
+        }
+    },
+    "production": {
+        "settings": {
+            "log_message_filters": [],
+            "model_name": "Logger",
+            "ttl_setting": "1h"
+        }
+    }
+}

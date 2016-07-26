@@ -1,0 +1,29 @@
+<% include ../shared/header %>
+<% genericdoctype = "Database Error Logs" %>
+<% genericdoccount = dbloggerscount %>
+<% genericdocpages = dbloggerpages %>
+<% genericdoctypelink = "dbloggers" %>
+<% genericdoctypeplurallink = "dbloggers" %>
+<% genericdoc_tktouse = "title,createdat,updatedat,active,theme,dblogger_interval" %>
+<div class="ts-container ts-serif-clean">
+	<div class="ts-page-content-container">
+    <% include ../shared/genericdoc_search_filters %>
+      <div id="ts-contacts-preloading" class="ts-preloading hide-preloading hide"></div>
+				<input type="hidden" name="_csrf" value=<%- locals.token %> >
+ 				<%- locals.get_data_table_html({
+					data: dbloggers,
+					data_attributes:locals.dblogger_util.dblogger_table.data_attributes,
+					thead:locals.default_thead(),
+					tbody: locals.dblogger_util.dblogger_table.tbody({Moment:locals.viewhelper.moment,locals}),
+					custom_tfoot: locals.default_custom_tfoot({
+						total:dbloggers.length,
+						count:genericdoccount,
+						pages:genericdocpages,
+						currentlimit:request.query.limit,
+						currentpage:request.query.pagenum,
+						colspan: 9
+					})
+				}) %>
+	</div>
+</div>
+<% include ../shared/footer %>
