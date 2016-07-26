@@ -2,7 +2,7 @@
     "periodicCompatibility": "8.0.0",
     "periodicDependencies": [{
         "extname": "periodicjs.ext.asyncadmin",
-        "version": "8.0.0"
+        "version": "7.0.0"
     }],
     "periodicjs.ext.asyncadmin": {
         "menu": {
