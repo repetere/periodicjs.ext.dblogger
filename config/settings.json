@@ -11,10 +11,10 @@
             "log_message_filters": [],
             "model_name": "Logger",
             "ttl_setting": "1h",
-            "mongourl": "mongodb://s45vtsrt:s45yhdyg564@iad1-c12-1.objectrocket.com:50071,iad1-c12-0.objectrocket.com:50071/pf_app1_dev_errorlog",
+            "mongourl": "mongodb://username:password@externalmongodb-host-1.com:12071,externalmongodb-host-0.com:50071/app_error_log_db",
             "mongooptions": {
                 "replset": {
-                    "rs_name": "38c7f330bb2b46999f821bccd9ab53d2"
+                    "rs_name": "replicasetname"
                 }
             }
         }
