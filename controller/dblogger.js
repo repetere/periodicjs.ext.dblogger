@@ -19,7 +19,6 @@ module.exports = function(resources) {
     CoreUtilities = resources.core.utilities;
     dbloggerSettings = resources.app.controller.extension.dblogger.settings;
     mongooseLogger = resources.app.controller.extension.dblogger.settings.getDBConnection().model(dbloggerSettings.model_name);
-    console.log('from controller mongooseLogger', mongooseLogger);
     logger = resources.logger;
     let cronSettings = {
         model_name: 'dblogger',
