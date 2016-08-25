@@ -26,7 +26,7 @@ module.exports = function(resources) {
     controllerOptions: {
       model: mongooseLogger
     },
-    searchfields: ['level', 'msg', 'meta', 'hostname', 'meta.ipinfo.user', 'meta.ipinfo.x-forwarded-for', 'meta.ipinfo.remoteAddress', 'meta.ipinfo.referer', 'meta.ipinfo.originalUrl', 'meta.ipinfo.headerHost'],
+    searchfields: ['level', 'msg', 'meta', 'hostname', 'meta.ipinfo.user', 'meta.ipinfo.user.email', 'meta.ipinfo.user.username', 'meta.ipinfo.x-forwarded-for', 'meta.ipinfo.remoteAddress', 'meta.ipinfo.referer', 'meta.ipinfo.originalUrl', 'meta.ipinfo.headerHost'],
     use_admin_menu: true,
     use_plural_view_names: true,
     // load_model_population: 'asset',
