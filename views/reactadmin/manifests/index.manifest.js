@@ -11,7 +11,8 @@ const schemas = {
 };
 const tableHeader = [
   data_tables.tableField({
-    field: 'ObjectId',
+    title: 'ObjectId',
+    field: '_id',
     link: true,
     headerStyle: {
       maxWidth: 150,
