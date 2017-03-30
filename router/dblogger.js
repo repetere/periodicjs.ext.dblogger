@@ -4,7 +4,7 @@ module.exports = function(resources) {
     const dbloggerController = resources.app.controller.extension.dblogger.controller.dblogger;
     const DBLoggerRouter = dbloggerController.router;
 
-    // DBLoggerRouter.post('/process_application',
+    // DBLoggerRouter.post('  /process_application',
     // 	dbloggerController.get_sor_customer_guid,
     // 	customerRequests.findCustomers,
     // 	dbloggerController.get_sor_application, 

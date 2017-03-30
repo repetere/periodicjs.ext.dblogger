@@ -13,10 +13,11 @@ var extension = function(periodic) {
         dbLoggerRouter = require('./router/index')(periodic);
         periodic.app.use(dbLoggerRouter);
     } catch (e) {
-        throw new Errorie({
-            name: 'Database Error Log Extension',
-            message: 'Config error - ' + e.message
-        });
+        throw e
+        // throw new Errorie({
+        //     name: 'Database Error Log Extension',
+        //     message: 'Config error - ' + e.message
+        // });
     }
     return periodic;
 };
