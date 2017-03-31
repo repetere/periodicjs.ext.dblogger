@@ -59,6 +59,7 @@ const tableHeader = [
 // console.log('new customerScheme()',new customerScheme());
 
 module.exports = (periodic) => {
+  let reactadmin = periodic.app.locals.extension.reactadmin;
   let extsettings = Object.assign({}, periodic.app.locals.extension.reactadmin.settings, {
     extension_overrides: Object.assign({},
       periodic.app.locals.extension.reactadmin.settings.extension_overrides,
@@ -83,7 +84,7 @@ module.exports = (periodic) => {
   const loggerManifests = autoManifests(
     schemas,
     {
-      prefix: 'contentlog',
+      prefix: `${reactadmin.manifest_prefix}extension/dblogger`,
       // dbname:'logger',
       extsettings,
     });
