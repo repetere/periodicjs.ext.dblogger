@@ -10,7 +10,9 @@
     "email": "janbialostok@gmail.com",
     "name": "janbialostok"
   }],
-  "dependencies": {},
+  "dependencies": {
+    "ms": "^2.0.0"    
+  },
   "description": "Log errors to database Extension",
   "devDependencies": {
     "async": "^2.0.0-rc.3",
