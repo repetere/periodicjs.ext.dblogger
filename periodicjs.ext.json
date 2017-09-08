@@ -4,6 +4,9 @@
   "periodic_type": 0,
   "periodic_priority": 0,
   "periodic_config": {
+    "periodicjs_ext_reactapp": {
+      "navigation": "node_modules/periodicjs.ext.dblogger/views/reactapp/components/navigation.manifest.js"
+    },
     "periodicjs_ext_admin": {
       "Database Logs": [{
         "link": "/b-admin/data/dblog_loggers",
