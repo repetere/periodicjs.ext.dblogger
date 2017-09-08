@@ -1,63 +1,72 @@
-# periodicjs.ext.dblogger
+# periodicjs.ext.dblogger [![Coverage Status](https://coveralls.io/repos/github/typesettin/periodicjs.ext.dblogger/badge.svg?branch=master)](https://coveralls.io/github/typesettin/periodicjs.ext.dblogger?branch=master) [![Build Status](https://travis-ci.org/typesettin/periodicjs.ext.dblogger.svg?branch=master)](https://travis-ci.org/typesettin/periodicjs.ext.dblogger)
 
-Database Error logger will log winstonjs errors to a mongo databse
+Database Error logger will log winstonjs errors to a mongo database.
 
- [API Documentation](https://github.com/typesettin/periodicjs.ext.dblogger/blob/master/doc/api.md)
+[API Documentation](https://github.com/typesettin/periodicjs.ext.dblogger/blob/master/doc/api.md)
+
+## Usage
+
+### CLI TASK
+
+You can preform a task via CLI
+```
+$ cd path/to/application/root
+### Using the CLI
+$ periodicjs ext periodicjs.ext.dblogger hello  
+### Calling Manually
+$ node index.js --cli --command --ext --name=periodicjs.ext.dblogger --task=hello 
+```
+
+## Configuration
+
+You can configure periodicjs.ext.dblogger
+
+### Default Configuration
+```javascript
+{
+  settings: {
+    defaults: true,
+  },
+  databases: {
+  },
+};
+```
+
 
 ## Installation
 
+### Installing the Extension
+
+Install like any other extension, run `npm run install periodicjs.ext.dblogger` from your periodic application root directory and then normally you would run `periodicjs addExtension periodicjs.ext.dblogger`, but this extension does this in the post install npm script.
 ```
-$ npm install periodicjs.ext.dblogger
+$ cd path/to/application/root
+$ npm run install periodicjs.ext.dblogger
+$ periodicjs addExtension periodicjs.ext.dblogger //this extension does this in the post install script
 ```
+### Uninstalling the Extension
 
-## Usage & Configuration
-
-This extension will either log errors to a collection in your periodic db or an external database. The TTL settings are configured with the ms extension ('1h' = 1 hour).
-
-### Example Database Logger Extension Configuration
-
-**settings.json**
-`content/config/extensions/periodicjs.ext.dblogger/settings.json`
-
-```json
-{
-	"production":{
-		"settings":{
-      "log_message_filters": [],
-      "model_name": "Logger",
-      "ttl_setting": "1h",
-      "mongourl": "mongodb://username:password@externalmongodb-host-1.com:12071,externalmongodb-host-0.com:50071/app_error_log_db",
-      "mongooptions": {
-          "replset": {
-              "rs_name": "replicasetname"
-          }
-      }
-		}
-	},
-	"development-use-periodicdb":{
-		"settings":{
-      "log_message_filters": [],
-      "model_name": "Logger",
-      "ttl_setting": "1h"
-		}
-	}
-}
+Run `npm run uninstall periodicjs.ext.dblogger` from your periodic application root directory and then normally you would run `periodicjs removeExtension periodicjs.ext.dblogger` but this extension handles this in the npm post uninstall script.
+```
+$ cd path/to/application/root
+$ npm run uninstall periodicjs.ext.dblogger
+$ periodicjs removeExtension periodicjs.ext.dblogger // this is handled in the npm postinstall script
 ```
 
-##Development
+
+## Testing
 *Make sure you have grunt installed*
 ```
 $ npm install -g grunt-cli
 ```
 
-Then run grunt watch
+Then run grunt test or npm test
 ```
-$ grunt watch
+$ grunt test && grunt coveralls #or locally $ npm test
 ```
 For generating documentation
 ```
 $ grunt doc
-$ jsdoc2md controller/**/*.js index.js install.js uninstall.js > doc/api.md
+$ jsdoc2md commands/**/*.js config/**/*.js controllers/**/*.js  transforms/**/*.js utilities/**/*.js index.js > doc/api.md
 ```
-##Notes
+## Notes
 * Check out https://github.com/typesettin/periodicjs for the full Periodic Documentation
