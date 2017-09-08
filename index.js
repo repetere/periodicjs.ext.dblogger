@@ -6,7 +6,7 @@ module.exports = () => {
   periodic.status.on('configuration-complete', (status) => {
     const dbloggerExtSettings = periodic.settings.extensions[ 'periodicjs.ext.dblogger' ];
     periodic.logger.add(utilities.winston.coreDataWinstonLogger, dbloggerExtSettings);
+    utilities.reactapphelper.setReactAppTable();
   });
-  utilities.reactapphelper.setReactAppTable();
   return Promise.resolve(true);
 };
