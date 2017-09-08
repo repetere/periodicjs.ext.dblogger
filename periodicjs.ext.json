@@ -4,5 +4,11 @@
   "periodic_type": 0,
   "periodic_priority": 0,
   "periodic_config": {
+    "periodicjs_ext_admin": {
+      "Database Logs": [{
+        "link": "/b-admin/data/dblog_loggers",
+        "title": "Application Logger"
+      }]
+    }
   }
 }
