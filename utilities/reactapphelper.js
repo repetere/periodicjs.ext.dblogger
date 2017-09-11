@@ -62,7 +62,9 @@ function getIndexTableFields() {
 }
 
 function setReactAppTable() {
-  periodic.settings.extensions['periodicjs.ext.reactapp'].data_tables = Object.assign({},  periodic.settings.extensions['periodicjs.ext.reactapp'].data_tables, getIndexTableFields());
+  if (periodic.settings.extensions[ 'periodicjs.ext.reactapp' ]) {
+    periodic.settings.extensions['periodicjs.ext.reactapp'].data_tables = Object.assign({},  periodic.settings.extensions['periodicjs.ext.reactapp'].data_tables, getIndexTableFields());
+  }
 }
 
 module.exports = {
