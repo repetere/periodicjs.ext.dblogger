@@ -2,13 +2,9 @@
 
 const periodic = require('periodicjs');
 const extensionRouter = periodic.express.Router();
-// const fs = require('fs-extra');
-// const path = require('path');
-// const packageJson = fs.readJsonSync(path.join(__dirname, '../package.json'));
-// const preTransforms = periodic.utilities.middleware.preTransforms(periodic);
+const extRouter = require('./ext');
 
-// extensionRouter.all(packageJson.name, preTransforms, (req, res) => {
-//   res.send(`EXTENSION ${packageJson.name}`);
-// });
+extensionRouter.use('/b-admin/ext/dblogger', extRouter);
+extensionRouter.use('/b-admin/data', extRouter);
 
 module.exports = extensionRouter;
