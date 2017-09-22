@@ -63,7 +63,14 @@ function getIndexTableFields() {
 
 function setReactAppTable() {
   if (periodic.settings.extensions[ 'periodicjs.ext.reactapp' ]) {
-    periodic.settings.extensions['periodicjs.ext.reactapp'].data_tables = Object.assign({},  periodic.settings.extensions['periodicjs.ext.reactapp'].data_tables, getIndexTableFields());
+    periodic.settings.extensions[ 'periodicjs.ext.reactapp' ].data_tables = Object.assign({}, periodic.settings.extensions[ 'periodicjs.ext.reactapp' ].data_tables, getIndexTableFields());
+    periodic.settings.extensions[ 'periodicjs.ext.reactapp' ].extension_overrides.customDetailEditor = Object.assign({},
+      periodic.settings.extensions[ 'periodicjs.ext.reactapp' ].extension_overrides.customDetailEditor, {
+        dblog_logger: {
+          base: false,
+          advanced: true
+        },
+      });
   }
 }
 
