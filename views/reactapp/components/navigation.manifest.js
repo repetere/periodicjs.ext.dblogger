@@ -2,7 +2,8 @@
 // const path = require('path');
 
 module.exports = (periodic) => {
-  let reactapp = periodic.locals.extensions.get('periodicjs.ext.reactapp').reactapp();
+  const reactappLocals = periodic.locals.extensions.get('periodicjs.ext.reactapp');
+  const reactapp = reactappLocals.reactapp();
   
   return {
     wrapper: {
@@ -17,26 +18,16 @@ module.exports = (periodic) => {
         style: {},
       },
       children: [
-        {
-          component: 'SubMenuLinks',
-          children: [
+        reactappLocals.server_manifest.core_navigation.getSidebarNav({
+          title: 'Database Log',
+          links: [
             {
-              component: 'MenuLabel',
-              children: 'Database Log',
+              href: `${reactapp.manifest_prefix}data/dblog_loggers`,
+              label: 'Application Log',
+              id: 'app-log',
             },
-            {
-              component: 'MenuAppLink',
-              props: {
-                href: `${reactapp.manifest_prefix}data/dblog_loggers`,
-                label: 'Application Log',
-                id: 'app-log',
-              },
-            },
-            // login
-            // register
-            // forgot password
-          ],
-        },
+          ]
+        }),
       ],
     },
   };
