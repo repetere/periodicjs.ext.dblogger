@@ -1,5 +1,7 @@
 'use strict';
 const Sequelize = require('sequelize');
+const os = require('os');
+const ms = require('ms');
 
 const scheme = {
   _id: {
@@ -17,7 +19,7 @@ const scheme = {
   },
   hostname: {
     type: Sequelize.STRING,
-    default: os.hostname()
+    default: os.hostname(),
   },
   level: {
     type: Sequelize.STRING,
@@ -43,12 +45,14 @@ const scheme = {
 
 module.exports = {
   scheme,
-  // associations,
+  associations:[],
   options: {},
   coreDataOptions: {
     sort: { createdat: -1, },
     docid: '_id',
-    search: ['level', 'msg', 'meta', 'hostname', 'meta.ipinfo.user', 'meta.ipinfo.user.email', 'meta.ipinfo.user.username', 'meta.ipinfo.x-forwarded-for', 'meta.ipinfo.remoteAddress', 'meta.ipinfo.referer', 'meta.ipinfo.originalUrl', 'meta.ipinfo.headerHost' ],
+    search: [
+      'level', 'msg', 'meta', 'hostname', 'meta.ipinfo.user', 'meta.ipinfo.user.email', 'meta.ipinfo.user.username', 'meta.ipinfo.x-forwarded-for', 'meta.ipinfo.remoteAddress', 'meta.ipinfo.referer', 'meta.ipinfo.originalUrl', 'meta.ipinfo.headerHost',
+    ],
     // population: false,
   },
 };
