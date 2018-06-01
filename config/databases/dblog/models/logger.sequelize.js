@@ -51,7 +51,7 @@ module.exports = {
     sort: { createdat: -1, },
     docid: '_id',
     search: [
-      'level', 'msg', 'meta', 'hostname', 'meta.ipinfo.user', 'meta.ipinfo.user.email', 'meta.ipinfo.user.username', 'meta.ipinfo.x-forwarded-for', 'meta.ipinfo.remoteAddress', 'meta.ipinfo.referer', 'meta.ipinfo.originalUrl', 'meta.ipinfo.headerHost',
+      'level', 'msg', 'meta', 'hostname', 
     ],
     // population: false,
   },

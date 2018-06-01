@@ -1,7 +1,7 @@
 {
   "name": "periodicjs.ext.dblogger",
   "description": "Log errors to database Extension",
-  "version": "10.6.2",
+  "version": "10.6.3",
   "main": "index.js",
   "engines": {
     "node": "^6.x"
